@@ -1,0 +1,16 @@
+# Configuration Netlify pour NeoDrive
+# https://docs.netlify.com/configure-builds/file-based-configuration/
+
+[build]
+  # Site statique : pas de commande de build, on publie la racine
+  publish = "."
+
+# Netlify utilise automatiquement 404.html à la racine pour les pages introuvables.
+
+# En-têtes de sécurité de base
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "SAMEORIGIN"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
